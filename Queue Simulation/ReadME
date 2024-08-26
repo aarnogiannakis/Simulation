@@ -1,20 +1,12 @@
 ## Project Description as given in course [42187 Transport system analysis: performance and operations] of DTU
 
-As tourism has increased in Portugal, when reaching Lisbon’s airport to pick up passengers, on-demand ride sharing services (like Uber and Lyft) have been causing significant congestion. To solve the problem, a two-step mandatory process is set up: a first waiting queue to wait for a trip request and a second
-queue only for pick up passengers at the airport terminal. There is only one un-capacitated lane in the
-first queue and vehicles arrive according to a non-homogeneous Poisson process, with a varying rate 𝜆
-due to the peak hour. Initially, 𝜆 is 40 per hour and it increases linearly until it hits 150 per hour after 5
-hours. Then, 𝜆 decreases linearly until it hits 40 per hour after an additional 5 hours. We assume that
-the rate then repeats indefinitely in this fashion, that is,
-𝜆(𝑡 + 10) = 𝜆(𝑡)
-Vehicles receive trip requests (and exit this queue) under a FIFO discipline and following an exponential
-distribution with rate 200 per hour.
-After receiving a trip request, the vehicle proceeds to the second step to: directly pick up the passenger
-in the pick-up queue is empty, join the pick-up queue or wait at the exit of the first step if the pick-up
-queue is full. Because of the pick-up process (and the travelers’ luggage!) the service rate of this step
-two is of exponential distribution with rate 110 per hour. As the pick-up queue is located at the airport
-terminal entrance it can only take 9 cars (i.e. a total of 10 cars: one being served and 9 waiting in the
-pick-up queue.). A red light at the exit of the waiting queue gives the information to a vehicle exiting
-vehicle that there are already 10 cars in the next system. Thus, it has to wait at the end of the waiting
-queue until one vehicle leaves the pick-up queue. This also causes the next vehicle in the waiting queue
-to wait until there is no one in front of it
+As tourism has increased in Portugal, when reaching Lisbon’s airport to pick up passengers, on-demand ride sharing services (like Uber and Lyft) have been causing significant congestion. To solve the problem, a two-step mandatory process is set up: a first waiting queue to wait for a trip request and a second 
+queue only for pick up passengers at the airport terminal. There is only one un-capacitated lane in the first queue and vehicles arrive according to a non-homogeneous Poisson process, with a varying rate 𝜆 due to the peak hour. Initially, 𝜆 is 40 per hour and it increases linearly until it hits 150 per hour after 5
+hours. 
+
+Then, 𝜆 decreases linearly until it hits 40 per hour after an additional 5 hours. We assume that the rate then repeats indefinitely in this fashion, that is, 𝜆(𝑡 + 10) = 𝜆(𝑡) 
+
+Vehicles receive trip requests (and exit this queue) under a FIFO discipline and following an exponential distribution with rate 200 per hour.
+After receiving a trip request, the vehicle proceeds to the second step to: directly pick up the passenger in the pick-up queue is empty, join the pick-up queue or wait at the exit of the first step if the pick-up queue is full. Because of the pick-up process (and the travelers’ luggage!) the service rate of this step
+two is of exponential distribution with rate 110 per hour. As the pick-up queue is located at the airport terminal entrance it can only take 9 cars (i.e. a total of 10 cars: one being served and 9 waiting in the
+pick-up queue.). A red light at the exit of the waiting queue gives the information to a vehicle exiting vehicle that there are already 10 cars in the next system. Thus, it has to wait at the end of the waiting queue until one vehicle leaves the pick-up queue. This also causes the next vehicle in the waiting queue to wait until there is no one in front of it
